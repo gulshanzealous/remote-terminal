@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, RefObject } from "react";
 import "./App.css";
 import socketIOClient from "socket.io-client";
 
-const SOCKET_URL = "http://localhost:8080";
+const SOCKET_URL = process.env.SERVER_URL || "http://localhost:8080";
 
 const App: React.FC = () => {
   const [logs, setLogs] = useState<Array<string>>(["hello, i am a logger!"]);
